@@ -1,0 +1,28 @@
+@media only screen and (max-width: 900px) {
+  .event {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding-bottom: 20px;
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+  }
+  .event:last-child {
+    border-bottom: none;
+  }
+  .event article {
+    order: 2;
+    width: 100%;
+  }
+  .event .media {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+  .event img,
+  .event iframe {
+    width: 100%;
+  }
+}
