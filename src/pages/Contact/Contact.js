@@ -1,6 +1,6 @@
 import React from "react";
-import TopPage from "../../components/TopPage/TopPage";
-import Footer from "../../components/Footer/Footer";
+import TopPage from "/src/components/TopPage/TopPage";
+import Footer from "/src/components/Footer/Footer";
 import "./css/index.css";
 
 class Contact extends React.Component {
