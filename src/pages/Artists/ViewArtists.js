@@ -1,11 +1,11 @@
 import React from "react";
-import Tile from "../../components/Tile/Tile";
-import SpotlightBanner from "../../components/SpotlightBanner/SpotlightBanner";
+import Tile from "/src/components/Tile/Tile";
+import SpotlightBanner from "/src/components/SpotlightBanner/SpotlightBanner";
 import leftPaddle from "/svg/leftArrow.svg";
 import qs from "qs";
 import "./css/index.css";
-import TopPage from "../../components/TopPage/TopPage";
-import Footer from "../../components/Footer/Footer";
+import TopPage from "/src/components/TopPage/TopPage";
+import Footer from "/src/components/Footer/Footer";
 
 class ViewArtists extends React.Component {
   constructor(props) {
