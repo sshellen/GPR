@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import qs from "qs";
-import TopPage from "../../components/TopPage/TopPage";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import Footer from "../../components/Footer/Footer";
-import HomeEventsAndNews from "../../components/HomeEventsAndNews/HomeEventsAndNews";
-import ArtistTiles from "../../components/ArtistTiles/ArtistTiles";
+import TopPage from "/src/components/TopPage/TopPage";
+import Sidebar from "src/components/Sidebar/Sidebar";
+import Footer from "/src/components/Footer/Footer";
+import HomeEventsAndNews from "/src/components/HomeEventsAndNews/HomeEventsAndNews";
+import ArtistTiles from "/src/components/ArtistTiles/ArtistTiles";
 import "./css/index.css";
 import bannerImg from "/img/homeBanner.png";
 
