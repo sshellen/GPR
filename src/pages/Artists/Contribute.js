@@ -1,9 +1,9 @@
 import React from "react";
-import SpotlightBanner from "../../components/SpotlightBanner/SpotlightBanner";
+import SpotlightBanner from "/src/components/SpotlightBanner/SpotlightBanner";
 import qs from "qs";
 import "./css/index.css";
-import TopPage from "../../components/TopPage/TopPage";
-import Footer from "../../components/Footer/Footer";
+import TopPage from "/src/components/TopPage/TopPage";
+import Footer from "/src/components/Footer/Footer";
 
 class Contribute extends React.Component {
   render() {
