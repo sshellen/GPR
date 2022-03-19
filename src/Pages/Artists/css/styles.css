@@ -1,0 +1,170 @@
+.artists {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.artists section {
+  width: 100%;
+}
+.artistTiles {
+  margin-left: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
+}
+.artistTiles h3 {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  color: #242124;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0;
+  width: 100%;
+}
+.artists .viewHeading {
+  font-family: "Lato", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 0 20px 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+aside.filterNav {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px 20px 0;
+  min-width: 240px;
+}
+aside.filterNav .buttonBar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
+}
+aside.filterNav .navOption {
+  border: 1px solid #011526;
+  background-color: #fff;
+  text-align: left;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #011526;
+  padding: 15px 8px;
+  cursor: pointer;
+}
+aside.filterNav .navOption.selected {
+  background-color: #011526;
+  color: #fff;
+}
+
+aside.filterNav .navOption a,
+aside.filterNav .navOption a:visited,
+aside.filterNav .navOption a:active {
+  color: #011526;
+  text-decoration: none;
+}
+
+aside.filterNav .navOption a:hover {
+  color: #011526;
+  text-decoration: underline;
+}
+.genre {
+  display: flex;
+  flex-direction: column;
+  font-family: "Lato", sans-serif;
+  color: #242124;
+  font-size: 14px;
+}
+.genre input {
+  background: #fff;
+  border: 1px solid #999;
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+}
+.genre .formRow {
+  display: flex;
+  margin: 10px 0;
+  align-items: center;
+}
+
+.formHeader {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 0 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.formHeader h3 {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+.formHeader svg {
+  transition: all 200ms;
+}
+.formHeader svg.show {
+  margin-left: 10px;
+  transform: rotate(-90deg);
+}
+.formHeader svg.hide {
+  margin-left: 10px;
+  transform: rotate(0deg);
+}
+.contribute {
+  margin-bottom: 50px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contribute form {
+  max-width: 600px;
+  box-sizing: border-box;
+  margin-left: 20px;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+}
+.contribute .formRow {
+  display: flex;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+.contribute form input,
+.contribute form textarea {
+  background-color: #fff;
+  border: 1px solid #999;
+}
+.contribute input,
+.contribute textarea {
+  width: 100%;
+  padding: 5px;
+}
+
+.contribute form label {
+  width: 100px;
+  font-size: 14px;
+}
+.contribute .requiredFields {
+  margin-top: 20px;
+  font-size: 12px;
+  font-family: "Lato", sans-serif;
+}
+.contribute .buttonBar {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  justify-content: flex-end;
+}
+.instructions {
+  font-family: "Lato", sans-serif;
+  color: #242124;
+  margin: 40px 20px;
+  font-size: 14px;
+}
