@@ -14,7 +14,7 @@ body {
 .learnMore {
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: left;
   font-family: "Lato", sans-serif;
   font-weight: bold;
   font-size: 11px;
