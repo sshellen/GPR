@@ -1,0 +1,70 @@
+@media only screen and (max-width: 900px) {
+  .blueButton,
+  .blueHalfButton {
+    background-color: #047ac3;
+    color: #fff;
+    border: 0;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 12px;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .blueButton {
+    border-radius: 30px;
+  }
+
+  .blueHalfButton {
+    border-radius: 0 30px 30px 0;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  .learnMore {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    font-size: 11px;
+    text-decoration: none;
+  }
+
+  .learnMore:hover {
+    text-decoration: underline;
+  }
+
+  .learnMore.black {
+    color: #011526;
+  }
+
+  .learnMore.white {
+    color: #fff;
+  }
+
+  .learnMore.white:after {
+    background: url("/img/learnMoreWhite.png");
+  }
+
+  .learnMore.black:after {
+    background: url("/img/learnMoreBlack.png");
+  }
+
+  .learnMore.black:after,
+  .learnMore.white:after {
+    content: "";
+    background-position: 100% 50%;
+    margin-left: 5px;
+    width: 13px;
+    height: 15px;
+  }
+
+  hr.whiteSeparator {
+    background-color: #fff;
+    width: 100%;
+    margin: 40px 0;
+  }
+}

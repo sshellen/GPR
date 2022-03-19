@@ -1,0 +1,57 @@
+@media only screen and (max-width: 599px) {
+  .artist {
+    font-family: "Lato", sans-serif;
+    box-sizing: border-box;
+    min-width: 150px;
+    max-width: 300px;
+    margin: 0 10px 20px 10px;
+    background-color: #fff;
+    border: 1px solid #eee;
+  }
+
+  .artist img {
+    width: 100%;
+  }
+
+  .artist .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 0 10px;
+    width: inherit;
+    font-size: 12px;
+  }
+
+  .artist .description .teaser {
+    color: #242124;
+  }
+
+  .artist .description h3.name {
+    text-align: center;
+    color: #242124;
+    font-size: 16px;
+    color: #011526;
+    margin: 10px 0 0 0;
+    padding: 0;
+  }
+
+  .artist .description .blueButton {
+    text-align: center;
+    margin: 30px 0 30px 0;
+  }
+
+  .artist .info {
+    display: flex;
+    align-items: left;
+    font-size: 11px;
+    padding: 5px 10px 0 10px;
+  }
+
+  .artist .info .label {
+    width: 80px;
+  }
+  .artist .socialMedia img {
+    height: 14px;
+  }
+}

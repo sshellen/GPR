@@ -1,0 +1,5 @@
+@media only screen and (max-width: 900px) {
+  .eventsCol h2 {
+    font-size: 21px;
+  }
+}
