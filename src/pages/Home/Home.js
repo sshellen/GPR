@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import qs from "qs";
 import TopPage from "/src/components/TopPage/TopPage";
-import Sidebar from "src/components/Sidebar/Sidebar";
+import Sidebar from "/src/components/Sidebar/Sidebar";
 import Footer from "/src/components/Footer/Footer";
 import HomeEventsAndNews from "/src/components/HomeEventsAndNews/HomeEventsAndNews";
 import ArtistTiles from "/src/components/ArtistTiles/ArtistTiles";
