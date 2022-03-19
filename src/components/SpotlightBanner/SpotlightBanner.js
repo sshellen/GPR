@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { SpotlightTemplate } from "../LightboxTemplates/LightboxTemplates";
+import { SpotlightTemplate } from "/src/components/LightboxTemplates/LightboxTemplates";
 import "./css/index.css";
 import spotlightBG from "/img/spotlightBG.png";
 class SpotlightBanner extends React.Component {

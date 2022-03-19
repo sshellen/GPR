@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./css/index.css";
-import { ArtistTemplate } from "../LightboxTemplates/LightboxTemplates";
+import { ArtistTemplate } from "/src/components/LightboxTemplates/LightboxTemplates";
 import twitterBlack from "/img/twitterBlack.png";
 import facebookBlack from "/img/facebookBlack.png";
 import youtubeBlack from "/img/youtubeBlack.png";

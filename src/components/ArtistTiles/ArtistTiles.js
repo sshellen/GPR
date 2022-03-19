@@ -1,5 +1,5 @@
 import React from "react";
-import Tile from "../Tile/Tile";
+import Tile from "/src/components/Tile/Tile";
 import "./css/index.css";
 import paddleRight from "/img/paddleRight.png";
 import paddleLeft from "/img/paddleLeft.png";
