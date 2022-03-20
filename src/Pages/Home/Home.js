@@ -23,7 +23,7 @@ class Home extends React.Component {
         },
       },
     });
-    const request = `https://globalpeacerhythms.herokuapp.com/api/artists?${query}&populate=*`;
+    const request = `${process.env.API_URL}/api/artists?${query}&populate=*`;
 
     let data = await fetch(request, {
       method: "get",
