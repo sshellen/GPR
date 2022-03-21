@@ -54,7 +54,7 @@ const Sidebar = () => {
             {data.videoURL === null && data.image.data.attributes.formats && (
               <>
                 <img
-                  src={`${process.env.API_URL}${data.image.data.attributes.formats.medium.url}`}
+                  src={`${data.image.data.attributes.formats.medium.url}`}
                 />
                 <div className="tagline">{data.imageTagline}</div>
               </>
