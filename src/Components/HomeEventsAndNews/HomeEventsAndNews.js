@@ -62,7 +62,7 @@ const HomeEventsAndNews = () => {
           <div className="eventsCol recentEventCol">
             <div className="recentEventThumb">
               <img
-                src={`${process.env.API_URL}${events[0].attributes.image.data.attributes.formats.medium.url}`}
+                src={`${events[0].attributes.image.data.attributes.formats.medium.url}`}
               />
             </div>
             <div className="title">{events[0].attributes.name}</div>
