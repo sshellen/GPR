@@ -14,13 +14,19 @@ const Tile = ({ artist }) => {
     setState(false);
   };
 
-  let teaser = artist.description.substr(0, 100) + " ...";
+  let teaser =
+    artist && artist.description
+      ? artist.description.substr(0, 100) + " ..."
+      : "";
   return (
     <>
       <div className="artist">
-        <img
-          src={`${process.env.API_URL}${artist.image.data.attributes.formats.thumbnail.url}`}
-        />
+        {artist && artist.image !== null && (
+          <img
+            src={`${process.env.API_URL}${artist.image.data.attributes.formats.thumbnail.url}`}
+          />
+        )}
+
         <div className="description">
           <h3 className="name">{artist.name}</h3>
           <p className="teaser">{teaser}</p>
