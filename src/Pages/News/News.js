@@ -74,7 +74,7 @@ class News extends React.Component {
                           article.attributes.image.data.attributes.formats && (
                             <>
                               <img
-                                src={`${process.env.API_URL}${article.attributes.image.data.attributes.formats.medium.url}`}
+                                src={`${article.attributes.image.data.attributes.formats.medium.url}`}
                               />
                               <div className="tagline">
                                 {article.attributes.imageTagline}
