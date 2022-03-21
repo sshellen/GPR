@@ -53,7 +53,7 @@ class SpotlightBanner extends React.Component {
                 </div>
                 <div className="rightCol">
                   <img
-                    src={`${process.env.API_URL}${data.logo.data.attributes.formats.thumbnail.url}`}
+                    src={`${data.logo.data.attributes.formats.thumbnail.url}`}
                   />
                   <div className="tagline">
                     <a href={data.url}>{data.tagline}</a>
