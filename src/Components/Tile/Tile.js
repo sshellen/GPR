@@ -23,7 +23,7 @@ const Tile = ({ artist }) => {
       <div className="artist">
         {artist && artist.image !== null && (
           <img
-            src={`${process.env.API_URL}${artist.image.data.attributes.formats.thumbnail.url}`}
+            src={`${artist.image.data.attributes.formats.thumbnail.url}`}
           />
         )}
 
