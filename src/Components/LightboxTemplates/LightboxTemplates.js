@@ -144,7 +144,7 @@ class SpotlightTemplate extends React.Component {
                     spotlight.image.data.attributes.formats && (
                       <>
                         <img
-                          src={`${process.env.API_URL}${spotlight.image.data.attributes.formats.medium.url}`}
+                          src={`${spotlight.image.data.attributes.formats.medium.url}`}
                         />
                         <div className="tagline">{spotlight.tagline}</div>
                       </>
