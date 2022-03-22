@@ -3,11 +3,23 @@ import TopPage from "/src/Components/TopPage/TopPage";
 import Footer from "/src/Components/Footer/Footer";
 import "./css/index.css";
 
+const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+
 class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
-    this.state = { submitSuccess: "" };
+    this.state = {
+      submitSuccess: "",
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    };
   }
 
   handleSubmit = (form) => {
@@ -15,7 +27,7 @@ class Contact extends React.Component {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
+      body: encode({ "form-name": "contactForm", ...this.state }),
     })
       .then(() => this.setState({ submitSuccess: "true" }))
       .catch((error) => this.setState({ submitSuccess: "error" }));
@@ -84,31 +96,55 @@ class Contact extends React.Component {
                 }}
                 method="POST"
               >
-                  <input type="hidden" name="form-name" value="contactForm" />
+                <input type="hidden" name="form-name" value="contactForm" />
                 <div className="formRow">
                   <label htmlFor="name">
                     Name<sup>*</sup>{" "}
                   </label>
-                  <input id="name" name="name" type="text" />
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    value={this.state.name}
+                    onChange={(e) => this.setState({ name: e.target.value })}
+                  />
                 </div>
 
                 <div className="formRow">
                   <label htmlFor="email">
                     Email<sup>*</sup>{" "}
                   </label>
-                  <input id="email" name="email" type="text" />
+                  <input
+                    id="email"
+                    name="email"
+                    type="text"
+                    value={this.state.email}
+                    onChange={(e) => this.setState({ email: e.target.value })}
+                  />
                 </div>
 
                 <div className="formRow">
                   <label htmlFor="subject">Subject</label>
-                  <input id="subject" name="subject" type="text" />
+                  <input
+                    id="subject"
+                    name="subject"
+                    type="text"
+                    value={this.state.subject}
+                    onChange={(e) => this.setState({ subject: e.target.value })}
+                  />
                 </div>
 
                 <div className="formRow">
                   <label htmlFor="message">
                     Message<sup>*</sup>{" "}
                   </label>
-                  <textarea id="message" name="message" type="text"></textarea>
+                  <textarea
+                    id="message"
+                    name="message"
+                    type="text"
+                    value={this.state.message}
+                    onChange={(e) => this.setState({ message: e.target.value })}
+                  ></textarea>
                 </div>
 
                 <div className="requiredFields">
