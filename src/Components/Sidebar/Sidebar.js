@@ -53,9 +53,7 @@ const Sidebar = () => {
             )}
             {data.videoURL === null && data.image.data.attributes.formats && (
               <>
-                <img
-                  src={`${data.image.data.attributes.formats.medium.url}`}
-                />
+                <img src={`${data.image.data.attributes.formats.medium.url}`} />
                 <div className="tagline">{data.imageTagline}</div>
               </>
             )}
@@ -72,8 +70,11 @@ const Sidebar = () => {
             <label htmlFor="newsletterSidebar">
               Sign up for our newsletter
             </label>
-            <input type="text" placeholder="Email" id="newsletterSidebar" />
-            <button className="sidebar blueButton">SUBSCRIBE</button>
+            <form name="subscribeSidebar">
+              <input type="hidden" name="form-name" value="subscribeSidebar" />
+              <input type="text" placeholder="Email" id="newsletterSidebar" />
+              <button className="sidebar blueButton">SUBSCRIBE</button>
+            </form>
           </div>
         </div>
       )}
