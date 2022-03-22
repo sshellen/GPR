@@ -203,7 +203,7 @@ class Events extends React.Component {
                   {event.attributes.image && (
                     <div className="media">
                       <img
-                        src={`${process.env.API_URL}${event.attributes.image.data.attributes.formats.medium.url}`}
+                        src={`${event.attributes.image.data.attributes.formats.medium.url}`}
                       />
                     </div>
                   )}
