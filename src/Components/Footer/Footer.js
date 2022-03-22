@@ -85,19 +85,15 @@ const Footer = () => {
           </div>
           <div className="CTAs">
             <div className="newsLetter">
-              <form name="subscribeFooter1" onSubmit={(e) => handleSubmit(e)}>
-                <input
-                  type="hidden"
-                  name="form-name"
-                  value="subscribeFooter1"
-                />
-                <label htmlFor="subscribeFooter1Email">
+              <form name="subscribeFooter" onSubmit={(e) => handleSubmit(e)}>
+                <input type="hidden" name="form-name" value="subscribeFooter" />
+                <label htmlFor="subscribeFooterEmail">
                   Sign up for our newsletter
                 </label>
                 <input
                   type="text"
-                  id="subscribeFooter1Email"
-                  name="subscribeFooter1Email"
+                  id="subscribeFooterEmail"
+                  name="subscribeFooterEmail"
                   placeholder="Email"
                   className="emailInput"
                 />
@@ -180,15 +176,15 @@ const Footer = () => {
 
         <div className="bottom">
           <div className="newsLetter">
-            <form name="subscribeFooter2" onSubmit={(e) => handleSubmit(e)}>
-              <input type="hidden" name="form-name" value="subscribeFooter2" />
-              <label htmlFor="subscribeFooter2Email">
+            <form name="subscribeFooter" onSubmit={(e) => handleSubmit(e)}>
+              <input type="hidden" name="form-name" value="subscribeFooter" />
+              <label htmlFor="subscribeFooterEmail">
                 Sign up for our newsletter
               </label>
               <input
                 type="text"
-                id="subscribeFooter2Email"
-                name="subscribeFooter2Email"
+                id="subscribeFooterEmail"
+                name="subscribeFooterEmail"
                 placeholder="Email"
                 className="emailInput"
               />
@@ -273,15 +269,15 @@ const Footer = () => {
 
         <div>
           <div className="newsLetter">
-            <form name="subscribeFooter3" onSubmit={(e) => handleSubmit(e)}>
-              <input type="hidden" name="form-name" value="subscribeFooter3" />
-              <label htmlFor="subscribeFooter3Email">
+            <form name="subscribeFooter" onSubmit={(e) => handleSubmit(e)}>
+              <input type="hidden" name="form-name" value="subscribeFooter" />
+              <label htmlFor="subscribeFooterEmail">
                 Sign up for our newsletter
               </label>
               <input
                 type="text"
-                id="subscribeFooter3Email"
-                name="subscribeFooter3Email"
+                id="subscribeFooterEmail"
+                name="subscribeFooterEmail"
                 placeholder="Email"
                 className="emailInput"
               />
