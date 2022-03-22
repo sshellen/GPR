@@ -3,11 +3,6 @@ import TopPage from "/src/Components/TopPage/TopPage";
 import Footer from "/src/Components/Footer/Footer";
 import "./css/index.css";
 
-const encode = (data) => {
-    return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
-  }
 
 class Contact extends React.Component {
   constructor(props) {
@@ -27,7 +22,7 @@ class Contact extends React.Component {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contactForm", ...this.state }),
+      body: new URLSearchParams(formData).toString(),
     })
       .then(() => this.setState({ submitSuccess: "true" }))
       .catch((error) => this.setState({ submitSuccess: "error" }));
