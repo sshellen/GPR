@@ -83,8 +83,8 @@ class Contact extends React.Component {
                   return false;
                 }}
                 method="POST"
-                data-netlify="true"
               >
+                  <input type="hidden" name="form-name" value="contactForm" />
                 <div className="formRow">
                   <label htmlFor="name">
                     Name<sup>*</sup>{" "}
