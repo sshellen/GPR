@@ -122,6 +122,7 @@ aside.filterNav .navOption a:hover {
 .contribute {
   margin-bottom: 50px;
   width: 100%;
+  font-family: "Lato", sans-serif;
   box-sizing: border-box;
 }
 .contribute form {
@@ -133,6 +134,7 @@ aside.filterNav .navOption a:hover {
 }
 .contribute .formRow {
   display: flex;
+  flex-direction: column;
   margin-top: 10px;
   box-sizing: border-box;
 }
@@ -140,15 +142,29 @@ aside.filterNav .navOption a:hover {
 .contribute form textarea {
   background-color: #fff;
   border: 1px solid #999;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
 }
 .contribute input,
 .contribute textarea {
   width: 100%;
   padding: 5px;
 }
-
+.contribute form select {
+  -webkit-appearance: none;
+  border: 1px solid #999;
+  padding: 5px 40px 5px 5px;
+  background-color: #fff;
+  border-radius: 0;
+  background-image: url("/img/arrowDown.png");
+  background-position: top 8px right 8px;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+}
 .contribute form label {
-  width: 100px;
+  width: 100%;
   font-size: 14px;
 }
 .contribute .requiredFields {
@@ -167,4 +183,44 @@ aside.filterNav .navOption a:hover {
   color: #242124;
   margin: 40px 20px;
   font-size: 14px;
+}
+.contribute .requiredFields {
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.contribute .formRow.required input,
+.contribute .formRow.required textarea,
+.contribute .formRow.required select {
+  border-color: #a40c0c;
+}
+.contribute .formRow.required label {
+  color: #a40c0c;
+}
+.contribute .alertMessage {
+  margin: 20px;
+  color: #a40c0c;
+  background-color: #f8e8e8;
+  border: 1px solid #a40c0c;
+  padding: 0 10px;
+  max-width: 600px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.requiredTag {
+  white-space: nowrap;
+  font-size: 11px;
+  padding: 5px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+.requiredTag:after {
+  content: "\BB";
+}
+.contribute .thanks {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin: 30px 0;
 }
