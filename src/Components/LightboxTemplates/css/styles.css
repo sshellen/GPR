@@ -1,0 +1,127 @@
+@media only screen and (min-width: 901px) {
+  .lightbox {
+    position: absolute;
+    background: #fff;
+    color: #242124;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #fff;
+    padding: 50px;
+    box-sizing: border-box;
+  }
+  .lightbox h2 {
+    font-family: "Libre Baskerville", serif;
+    font-size: 36px;
+    margin: 0;
+    color: #011526;
+  }
+
+  .lightbox p {
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    color: #242124;
+    margin: 10px 0 30px 0;
+  }
+
+  .fixed {
+    position: fixed;
+  }
+
+  .lightbox .close {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .lightbox .close img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .content .lightboxCols {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 30px 0;
+  }
+
+  .content .lightboxCols .leftCol img.profileImg {
+    width: 100%;
+    min-width: 300px;
+    border: 1px solid #ddd;
+  }
+
+  .content .lightboxCols .rightCol {
+    margin-left: 40px;
+  }
+  .content .lightboxCols .leftCol {
+    width: 100%;
+  }
+  .content .lightboxCols .leftCol .socialMedia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .content .lightboxCols .leftCol .socialMedia a {
+    margin: 0 10px;
+  }
+
+  .content .lightboxCols .leftCol .socialMedia img {
+    height: 30px;
+    width: 30px;
+  }
+
+  .info {
+    font-family: "Lato", sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    font-size: 12px;
+    margin: 20px 0;
+  }
+
+  .info .label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+
+  .info .description a:visited,
+  .info .description a:active {
+    text-decoration: none;
+    color: #011526;
+  }
+
+  .info .description a:hover {
+    text-decoration: underline;
+  }
+
+  .lightbox .buttonRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px;
+  }
+  .lightbox .container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+
+  /* Then style the iframe to fit in the container div with full height and width */
+  .lightbox .responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
