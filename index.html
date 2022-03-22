@@ -16,14 +16,63 @@
     />
   </head>
   <body>
-     <form name="contactForm" netlify netlify-honeypot="bot-field" hidden>
-      <input id="name" name="name" type="text" />
+    <form name="contactForm" netlify netlify-honeypot="bot-field" hidden>
+      <input name="name" type="text" />
 
-      <input id="email" name="email" type="text" />
+      <input name="email" type="text" />
 
-      <input id="subject" name="subject" type="text" />
+      <input name="subject" type="text" />
 
-      <textarea id="message" name="message" type="text"></textarea>
+      <textarea name="message" type="text"></textarea>
+    </form>
+
+    <form name="contributeForm" netlify netlify-honeypot="bot-field" hidden>
+      <div className="formRow">
+        <input type="text" name="name" />
+      </div>
+
+      <input name="email" type="text" />
+
+      <input name="mediaTitle" type="text" />
+
+      <select name="genre">
+        <option value="SelectOne">Select One</option>
+        <option value="Rock">Rock</option>
+        <option value="RandB">R&amp;B</option>
+        <option value="Jazz">Jazz</option>
+        <option value="HipHop">Hip Hop</option>
+        <option value="Blues">Blues</option>
+        <option value="Folk">Folk</option>
+        <option value="Reggae">Reggae</option>
+        <option value="Pop">Pop</option>
+        <option value="Country">Country</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <textarea type="text" name="description"></textarea>
+
+      <textarea type="text" name="description"></textarea>
+
+      <textarea type="text" name="twitterLinks"></textarea>
+
+      <textarea type="text" name="facebookLinks"></textarea>
+
+      <textarea type="text" name="instagramLinks"></textarea>
+
+      <textarea type="text" name="personalSiteLinks"></textarea>
+    </form>
+
+    <form name="subscribeFooter1" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="subscribeFooter1Email" />
+    </form>
+    <form name="subscribeFooter2" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="subscribeFooter2Email" />
+    </form>
+    <form name="subscribeFooter3" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="subscribeFooter3Email" />
+    </form>
+    <form name="subscribeSidebar" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="newsletterSidebar" />
     </form>
     <div id="app"></div>
     <script src="/main.js"></script>
