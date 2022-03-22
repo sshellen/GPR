@@ -7,6 +7,26 @@ import youtube from "/img/youTubeWhite.png";
 import instagram from "/img/instagramWhite.png";
 
 const Footer = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    let form = e.target;
+
+    let formData = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(
+        Array.prototype.slice
+          .call(form.getElementsByClassName("emailInput"))
+          .map((input) => (input.value = ""))
+      )
+      .catch((error) => console.log(error));
+  };
+
   return (
     <>
       <footer className="desktop">
@@ -65,9 +85,26 @@ const Footer = () => {
           </div>
           <div className="CTAs">
             <div className="newsLetter">
-              <label htmlFor="">Sign up for our newsletter</label>
-              <input type="text" placeholder="Email" />
-              <button className="blueHalfButton">SUBSCRIBE</button>
+              <form name="subscribeFooter1" onSubmit={(e) => handleSubmit(e)}>
+                <input
+                  type="hidden"
+                  name="form-name"
+                  value="subscribeFooter1"
+                />
+                <label htmlFor="subscribeFooter1Email">
+                  Sign up for our newsletter
+                </label>
+                <input
+                  type="text"
+                  id="subscribeFooter1Email"
+                  name="subscribeFooter1Email"
+                  placeholder="Email"
+                  className="emailInput"
+                />
+                <button className="blueHalfButton" type="submit">
+                  SUBSCRIBE
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -143,9 +180,22 @@ const Footer = () => {
 
         <div className="bottom">
           <div className="newsLetter">
-            <label htmlFor="footerEmail">Sign up for our newsletter</label>
-            <input id="footerEmail" type="text" placeholder="Email" />
-            <button className="blueHalfButton">SUBSCRIBE</button>
+            <form name="subscribeFooter2" onSubmit={(e) => handleSubmit(e)}>
+              <input type="hidden" name="form-name" value="subscribeFooter2" />
+              <label htmlFor="subscribeFooter2Email">
+                Sign up for our newsletter
+              </label>
+              <input
+                type="text"
+                id="subscribeFooter2Email"
+                name="subscribeFooter2Email"
+                placeholder="Email"
+                className="emailInput"
+              />
+              <button className="blueHalfButton" type="submit">
+                SUBSCRIBE
+              </button>
+            </form>
           </div>
         </div>
         <div className="socialMedia">
@@ -223,9 +273,22 @@ const Footer = () => {
 
         <div>
           <div className="newsLetter">
-            <label htmlFor="">Sign up for our newsletter</label>
-            <input type="text" placeholder="Email" />
-            <button className="blueHalfButton">SUBSCRIBE</button>
+            <form name="subscribeFooter3" onSubmit={(e) => handleSubmit(e)}>
+              <input type="hidden" name="form-name" value="subscribeFooter3" />
+              <label htmlFor="subscribeFooter3Email">
+                Sign up for our newsletter
+              </label>
+              <input
+                type="text"
+                id="subscribeFooter3Email"
+                name="subscribeFooter3Email"
+                placeholder="Email"
+                className="emailInput"
+              />
+              <button className="blueHalfButton" type="submit">
+                SUBSCRIBE
+              </button>
+            </form>
           </div>
         </div>
         <div className="socialMedia">
