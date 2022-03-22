@@ -1,15 +1,15 @@
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom";
-import Loader from "./components/Loader";
+import Loader from "./Components/Loader";
 import "../css/index.css";
 const { BrowserRouter, Route, Switch } = require("react-router-dom");
-const Home = lazy(() => import("./pages/Home/Home"));
-const About = lazy(() => import("./pages/About/About"));
-const Contact = lazy(() => import("./pages/Contact/Contact"));
-const News = lazy(() => import("./pages/News/News"));
-const Events = lazy(() => import("./pages/Events/Events"));
-const ViewArtists = lazy(() => import("./pages/Artists/ViewArtists"));
-const Contribute = lazy(() => import("./pages/Artists/Contribute"));
+const Home = lazy(() => import("./Pages/Home/Home"));
+const About = lazy(() => import("./Pages/About/About"));
+const Contact = lazy(() => import("./Pages/Contact/Contact"));
+const News = lazy(() => import("./Pages/News/News"));
+const Events = lazy(() => import("./Pages/Events/Events"));
+const ViewArtists = lazy(() => import("./Pages/Artists/ViewArtists"));
+const Contribute = lazy(() => import("./Pages/Artists/Contribute"));
 const Routes = (
   <BrowserRouter>
     <Suspense fallback=<Loader />>
