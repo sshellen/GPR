@@ -97,6 +97,7 @@ const Sidebar = () => {
                 placeholder="Email"
                 className="emailInput"
                 id="newsletterSidebar"
+                name="newsletterSidebar"
               />
               <button className="sidebar blueButton" type="submit">
                 SUBSCRIBE
