@@ -4,6 +4,26 @@ import "./css/index.css";
 const Sidebar = () => {
   const [data, setData] = useState({});
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    let form = e.target;
+
+    let formData = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(
+        Array.prototype.slice
+          .call(form.getElementsByClassName("emailInput"))
+          .map((input) => (input.value = ""))
+      )
+      .catch((error) => console.log(error));
+  };
+
   useEffect(() => {
     let data = fetch(`${process.env.API_URL}/api/spotlights?populate=*`, {
       method: "get",
@@ -67,13 +87,20 @@ const Sidebar = () => {
           <hr className="whiteSeparator" />
           <h3>Stay up to do date with Global Peace Rhythms.</h3>
           <div className="newsLetter">
-            <label htmlFor="newsletterSidebar">
-              Sign up for our newsletter
-            </label>
-            <form name="subscribeSidebar">
+            <form name="subscribeSidebar" onSubmit={(e) => handleSubmit(e)}>
+              <label htmlFor="newsletterSidebar">
+                Sign up for our newsletter
+              </label>
               <input type="hidden" name="form-name" value="subscribeSidebar" />
-              <input type="text" placeholder="Email" id="newsletterSidebar" />
-              <button className="sidebar blueButton">SUBSCRIBE</button>
+              <input
+                type="text"
+                placeholder="Email"
+                className="emailInput"
+                id="newsletterSidebar"
+              />
+              <button className="sidebar blueButton" type="submit">
+                SUBSCRIBE
+              </button>
             </form>
           </div>
         </div>
