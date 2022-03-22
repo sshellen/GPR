@@ -1,0 +1,110 @@
+@media only screen and (min-width: 901px) {
+  .topPage.tablet {
+    display: none;
+  }
+  #flyoutMenu {
+    display: none;
+  }
+  .desktop.topPage {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #011526;
+    color: #fff;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: sticky;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
+  }
+
+  .desktop.topPage img {
+    width: 200px;
+  }
+
+  .desktop.topPage .topRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .desktop.topPage .search {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .desktop.topPage .search input {
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    border: 1px solid #eee;
+    padding: 8px;
+  }
+
+  .desktop.topPage .search input {
+    border-radius: 30px;
+    margin-right: 20px;
+  }
+  .desktop.topPage .pulldownMenu {
+    display: none;
+    position: absolute;
+    color: #fff;
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    margin-left: -10px;
+    padding-top: 10px;
+  }
+  .desktop.topPage .pulldownMenu ul {
+    background-color: #011526;
+    margin: 0;
+    padding: 0;
+    opacity: 0.9;
+  }
+  .desktop.topPage .pulldownMenu ul li {
+    margin: 0;
+    padding: 10px 10px;
+    list-style: none;
+    cursor: pointer;
+  }
+  .desktop.topPage .pulldownMenu ul li a,
+  .desktop.topPage .pulldownMenu ul li a:visited,
+  .desktop.topPage .pulldownMenu ul li a:active,
+  .desktop.topPage .pulldownMenu ul li a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  .desktop.topPage .pulldownMenu ul li:hover a,
+  .desktop.topPage .pulldownMenu ul li:hover a:visited,
+  .desktop.topPage .pulldownMenu ul li:hover a:active,
+  .desktop.topPage .pulldownMenu ul li:hover a:hover {
+    color: #011526;
+    text-decoration: none;
+  }
+
+  .desktop.topPage .pulldownMenu ul li:hover {
+    background-color: #fff;
+    color: #011526;
+  }
+  .desktop.topPage .pulldownMenu.showMenu {
+    display: block;
+  }
+  .topNav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 15px 0 0 0;
+  }
+  .topNav ul li {
+    margin-left: 20px;
+  }
+
+  .topNav a {
+    color: #fff;
+    text-decoration: none;
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+  }
+}

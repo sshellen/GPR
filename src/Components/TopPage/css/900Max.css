@@ -1,0 +1,138 @@
+@media only screen and (max-width: 900px) {
+  .topPage.desktop {
+    display: none;
+  }
+  .topNav ul {
+    display: none;
+  }
+
+  .tablet.topPage {
+    display: flex;
+    flex-direction: column;
+    background-color: #011526;
+    color: #fff;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    align-items: flex-start;
+    position: sticky;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
+  }
+  .tablet.topPage .topRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tablet.topPage .logo {
+    width: 150px;
+  }
+  .tablet.topPage .topRow .topRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .tablet.topPage .topRow .topRight button {
+    margin-right: 20px;
+  }
+  .tablet.topPage .topRow .topRight .hamburgerMenu {
+    width: 20px;
+  }
+  .tablet.topPage .bottomRow {
+    width: 100%;
+  }
+  .tablet.topPage .search {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 100%;
+  }
+  .tablet.topPage .search input {
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    border: 1px solid #eee;
+    padding: 5px;
+  }
+
+  .tablet.topPage .search input {
+    border-radius: 30px;
+    margin-right: 20px;
+    width: 100%;
+  }
+  #flyoutMenu {
+    position: absolute;
+    display: flex;
+    top: 0;
+    right: -100%;
+    width: 90%;
+    height: 100%;
+    background-color: #011526;
+    z-index: 3000;
+    box-sizing: border-box;
+  }
+  #flyoutMenu ul {
+    padding: 0;
+    margin: 10px 0 0 10px;
+  }
+  #flyoutMenu ul li {
+    list-style: none;
+    margin-top: 20px;
+  }
+  #flyoutMenu ul li {
+    cursor: pointer;
+    color: #fff;
+    font-family: "Lato", sans-serif;
+  }
+
+  #flyoutMenu h2 {
+    margin: 0 0 0 20px;
+    padding-top: 20px;
+  }
+  #flyoutMenu ul {
+    margin: 0 0 0 20px;
+    padding-top: 10px;
+  }
+  #flyoutMenu h2 {
+    font-family: montserrat-SemiBold;
+    font-size: 18px;
+  }
+  #flyoutMenu .menuItems {
+    position: relative;
+    width: 90%;
+  }
+  #flyoutMenu .menuItems a,
+  #flyoutMenu .menuItems a:visited,
+  #flyoutMenu .menuItems a:active,
+  #flyoutMenu .menuItems a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  .overlay {
+    position: absolute;
+    background: rgba(1, 21, 38, 0.8);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+  }
+  #flyoutMenu .close {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 20px 0 20px 0;
+    z-index: 4000;
+    box-sizing: border-box;
+    opacity: 0;
+  }
+  #flyoutMenu .close img {
+    width: 60%;
+  }
+  .fixed {
+    position: fixed;
+  }
+}

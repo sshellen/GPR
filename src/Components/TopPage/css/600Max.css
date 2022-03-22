@@ -1,0 +1,9 @@
+@media only screen and (max-width: 900px) {
+  .topNav ul {
+    display: none;
+  }
+
+  #flyoutMenu .close img {
+    width: 50%;
+  }
+}
