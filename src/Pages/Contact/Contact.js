@@ -2,7 +2,6 @@ import React from "react";
 import TopPage from "/src/Components/TopPage/TopPage";
 import Footer from "/src/Components/Footer/Footer";
 import "./css/index.css";
-import Success from "./Success";
 
 class Contact extends React.Component {
   constructor(props) {
