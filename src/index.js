@@ -22,6 +22,7 @@ const Routes = (
         <Route path="/events" component={Events} />
         <Route path="/contribute" component={Contribute} />
         <Route path="/viewartists" component={ViewArtists} />
+           <Route component={Home} />
       </Switch>
     </Suspense>
   </BrowserRouter>
