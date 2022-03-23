@@ -1,0 +1,25 @@
+.notFound {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.notFound h1 {
+  text-align: center;
+  width: 100%;
+}
+.notFound a,
+.notFound:visited,
+.notFound a:active {
+  font-family: "Lato", sans-serif;
+  color: #242124;
+  font-size: 18px;
+}
+.notFound img {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px 20px 80px 20px;
+  border: 1px solid #ccc;
+}
