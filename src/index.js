@@ -10,6 +10,7 @@ const News = lazy(() => import("./Pages/News/News"));
 const Events = lazy(() => import("./Pages/Events/Events"));
 const ViewArtists = lazy(() => import("./Pages/Artists/ViewArtists"));
 const Contribute = lazy(() => import("./Pages/Artists/Contribute"));
+const PageNotFound = lazy(() => import("./Pages/PageNotFound/PageNotFound"));
 const Routes = (
   <BrowserRouter>
     <Suspense fallback=<Loader />>
@@ -22,7 +23,7 @@ const Routes = (
         <Route path="/events" component={Events} />
         <Route path="/contribute" component={Contribute} />
         <Route path="/viewartists" component={ViewArtists} />
-           <Route component={Home} />
+        <Route path="*" component={PageNotFound} />
       </Switch>
     </Suspense>
   </BrowserRouter>
