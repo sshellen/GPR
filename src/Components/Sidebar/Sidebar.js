@@ -80,9 +80,9 @@ const Sidebar = () => {
           </div>
           <div className="title">{data.name}</div>
           <p>{data.description}</p>
-          <Link className="learnMore white" to={data.url}>
+          <a className="learnMore white" href={data.url}>
             LEARN MORE
-          </Link>
+          </a>
 
           <hr className="whiteSeparator" />
           <h3>Stay up to do date with Global Peace Rhythms.</h3>
