@@ -3,11 +3,11 @@ import ReactMarkdown from "react-markdown";
 import TopPage from "/src/Components/TopPage/TopPage";
 import Footer from "/src/Components/Footer/Footer";
 import "./css/index.css";
-
+const teaserLength = 1000;
 class News extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { news: [] };
+    this.state = { news: [{ readMore: [] }] };
   }
 
   fetchData = async () => {
@@ -25,6 +25,7 @@ class News extends React.Component {
   };
 
   componentDidMount() {
+    let readMore = { readMore: [] };
     this.fetchData()
       .then((response) => response.json())
       .then((data) => {
@@ -41,16 +42,87 @@ class News extends React.Component {
           <div className="news">
             {this.state.news &&
               this.state.news.length > 0 &&
-              this.state.news.map((article) => {
-                if (article.attributes.archived !== true)
+              this.state.news.map((article, index) => {
+                {
+                  article;
+                }
+                if (article.attributes && article.attributes.archived !== true)
                   return (
                     <article className="article" key={`article-${article.id}`}>
                       <article>
                         <h3>{article.attributes.title}</h3>
+                        {((this.state.news[0].readMore &&
+                          this.state.news[0].readMore.includes(article.id)) ||
+                          article.attributes.description.length <=
+                            teaserLength) && (
+                          <ReactMarkdown
+                            children={
+                              this.state.news[index].attributes.description
+                            }
+                          />
+                        )}
+                        {article.attributes.description.length > teaserLength &&
+                          !(
+                            this.state.news[0].readMore &&
+                            this.state.news[0].readMore.includes(article.id)
+                          ) && (
+                            <ReactMarkdown
+                              children={
+                                article.attributes.description.substr(
+                                  0,
+                                  teaserLength
+                                ) + "..."
+                              }
+                            />
+                          )}
 
-                        <ReactMarkdown
-                          children={article.attributes.description}
-                        />
+                        {article.attributes.description.length > teaserLength &&
+                          !(
+                            this.state.news[0].readMore &&
+                            this.state.news[0].readMore.includes(article.id)
+                          ) && (
+                            <div
+                              class="readMore"
+                              onClick={() => {
+                                let readMore = this.state.news[0].readMore
+                                  ? this.state.news[0].readMore
+                                  : [];
+                                this.setState({
+                                  news: [
+                                    {
+                                      readMore: [article.id, ...readMore],
+                                    },
+                                    ...this.state.news,
+                                  ],
+                                });
+                              }}
+                            >
+                              <button>READ MORE</button>
+                            </div>
+                          )}
+
+                        {article.attributes.description.length > teaserLength &&
+                          this.state.news[0].readMore &&
+                          this.state.news[0].readMore.includes(article.id) && (
+                            <div
+                              class="readMore"
+                              onClick={() =>
+                                this.setState({
+                                  news: [
+                                    {
+                                      readMore:
+                                        this.state.news[0].readMore.filter(
+                                          (val) => val !== article.id
+                                        ),
+                                    },
+                                    ...this.state.news,
+                                  ],
+                                })
+                              }
+                            >
+                              <button>READ LESS</button>
+                            </div>
+                          )}
                       </article>
                       <div className="media">
                         {article.attributes.videoURL !== null && (
