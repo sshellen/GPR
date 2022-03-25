@@ -6,7 +6,7 @@ import qs from "qs";
 import "./css/index.css";
 import TopPage from "/src/Components/TopPage/TopPage";
 import Footer from "/src/Components/Footer/Footer";
-
+const pageSize = 12;
 class ViewArtists extends React.Component {
   constructor(props) {
     super(props);
@@ -14,7 +14,7 @@ class ViewArtists extends React.Component {
       artists: [],
       genres: {
         Rock: false,
-        RandB: false,
+        RhythmAndBlues: false,
         Blues: false,
         Jazz: false,
         HipHop: false,
@@ -24,15 +24,20 @@ class ViewArtists extends React.Component {
         Country: false,
         Other: false,
       },
+      url: "",
+      page: 1,
+      pageCount: 1,
       showFilter: true,
+      pagination: false,
     };
   }
+
   filter = () => {
     let genres = this.state.genres;
-
     let arr = [];
     let or = {};
     let filters = {};
+    let returnAmount = this.state.page * pageSize;
     for (let obj in genres) {
       if (genres[obj] === true) {
         let selectedGenres = {};
@@ -46,11 +51,31 @@ class ViewArtists extends React.Component {
     or["$or"] = arr;
     filters["filters"] = or;
     let query = qs.stringify(filters);
-    this.fetchData(`${process.env.API_URL}/api/artists?${query}&populate=*`)
+    this.setState({
+      url: `${process.env.API_URL}/api/artists?${query}&populate=*`,
+    });
+    this.fetchData(
+      `${process.env.API_URL}/api/artists?${query}&populate=*&pagination[start]=0&pagination[limit]=${returnAmount}`
+    )
       .then((response) => response.json())
       .then((data) => {
         this.setState({ artists: data.data });
       });
+  };
+
+  pagination = () => {
+    const query = qs.stringify(
+      {
+        pagination: {
+          page: this.state.page,
+          pageSize: 12,
+        },
+      },
+      {
+        encodeValuesOnly: true,
+      }
+    );
+    return query;
   };
 
   toggleGenres = () => {
@@ -73,6 +98,7 @@ class ViewArtists extends React.Component {
       });
     }
   };
+
   toggleFilterOption = (e) => {
     let selected = e.target.checked;
     let option = e.target.value;
@@ -104,12 +130,29 @@ class ViewArtists extends React.Component {
 
     return data;
   };
-
+  loadMore = () => {
+    if (this.state.page < this.state.pageCount) {
+      this.setState({ page: this.state.page + 1 }, () => {
+        this.fetchData(this.state.url + "&" + this.pagination())
+          .then((response) => response.json())
+          .then((data) => {
+            this.setState({ artists: [...this.state.artists, ...data.data] });
+          });
+      });
+    }
+  };
   componentDidMount() {
-    this.fetchData(`${process.env.API_URL}/api/artists?populate=*`)
+    this.setState({ url: `${process.env.API_URL}/api/artists?populate=*` });
+    this.fetchData(
+      `${process.env.API_URL}/api/artists?populate=*&` + this.pagination()
+    )
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ artists: data.data });
+        this.setState({
+          artists: data.data,
+          page: data.meta.pagination.page,
+          pageCount: data.meta.pagination.pageCount,
+        });
       });
     this.showHidePaddle = document.getElementById("showHidePaddle");
   }
@@ -173,11 +216,11 @@ class ViewArtists extends React.Component {
                   <div className="formRow">
                     <input
                       type="checkbox"
-                      id="RandB"
-                      value="RandB"
+                      id="RhythmAndBlues"
+                      value="RhythmAndBlues"
                       onChange={(e) => this.toggleFilterOption(e)}
                     />{" "}
-                    <label htmlFor="RandB">R&B</label>
+                    <label htmlFor="RhythmAndBlues">R&B</label>
                   </div>
                   <div className="formRow">
                     <input
@@ -259,7 +302,7 @@ class ViewArtists extends React.Component {
           </aside>
           <section>
             <h2 className="viewHeading">View Artists</h2>
-            <div className="artistTiles">
+            <div className="artistTiles" id="artistTiles">
               {this.state.artists &&
                 this.state.artists.map((artist, index) => (
                   <Tile key={`artist${index}`} artist={artist.attributes} />
@@ -268,6 +311,11 @@ class ViewArtists extends React.Component {
                 <h3>No results found.</h3>
               )}
             </div>
+            {this.state.pageCount > this.state.page && (
+              <div className="loadMore">
+                <button onClick={this.loadMore}>LOAD MORE</button>
+              </div>
+            )}
           </section>
         </main>
         <Footer />
