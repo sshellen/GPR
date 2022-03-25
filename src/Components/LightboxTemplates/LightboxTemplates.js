@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ReactMarkdown from "react-markdown";
+import OptimalImage from "/src/Components/OptimalImage/OptimalImage";
 import "./css/index.css";
 import close from "/img/close.png";
 import { Link } from "react-router-dom";
@@ -51,10 +52,8 @@ class ArtistTemplate extends React.Component {
             <div className="content">
               <div className="lightboxCols">
                 <div className="leftCol">
-                  <img
-                    className="profileImg"
-                    src={`${artist.image.data.attributes.formats.medium.url}`}
-                  />
+                  <OptimalImage format={artist.image.data.attributes.formats} />
+
                   <div className="socialMedia">
                     {artist.facebook && artist.facebook !== null && (
                       <Link to={artist.facebook}>
@@ -82,16 +81,20 @@ class ArtistTemplate extends React.Component {
                   <h2>{artist.name}</h2>
                   <ReactMarkdown children={artist.description} />
 
-                  <div className="info">
-                    <div className="label">LOCATION: </div>
-                    <div className="description">{artist.location}</div>
-                  </div>
-                  <div className="info">
-                    <div className="label">WEBSITE: </div>
-                    <div className="description">
-                      <a href={artist.website}>{artist.website}</a>
+                  {artist.location && artist.location !== null && (
+                    <div className="info">
+                      <div className="label">LOCATION: </div>
+                      <div className="description">{artist.location}</div>
                     </div>
-                  </div>
+                  )}
+                  {artist.website && artist.website !== null && (
+                    <div className="info">
+                      <div className="label">WEBSITE: </div>
+                      <div className="description">
+                        <a href={artist.website}>{artist.website}</a>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="buttonRow">
