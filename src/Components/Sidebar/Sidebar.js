@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import OptimalImage from "/src/Components/OptimalImage/OptimalImage";
 import "./css/index.css";
 const Sidebar = () => {
   const [data, setData] = useState({});
@@ -72,10 +73,7 @@ const Sidebar = () => {
               </>
             )}
             {data.videoURL === null && data.image.data.attributes.formats && (
-              <>
-                <img src={`${data.image.data.attributes.formats.medium.url}`} />
-                <div className="tagline">{data.imageTagline}</div>
-              </>
+              <OptimalImage format={data.image.data.attributes.formats} />
             )}
           </div>
           <div className="title">{data.name}</div>
