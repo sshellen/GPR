@@ -224,3 +224,22 @@ aside.filterNav .navOption a:hover {
   align-items: center;
   margin: 30px 0;
 }
+.loadMore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0 40px 0;
+}
+.loadMore button {
+  background-color: #011526;
+  color: #fff;
+  width: 50%;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-family: lato;
+  font-size: 14px;
+  font-weight: bold;
+}
+
