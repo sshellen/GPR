@@ -1,6 +1,6 @@
 # GlobalPeaceRhythms
 
-This repo shows work done for an NPO called Gloabl Peace Rhythms.
+This repo shows work done for an NPO called Global Peace Rhythms.
 
 The code uses React components and hooks into a headless CMS called Strapi.
 
